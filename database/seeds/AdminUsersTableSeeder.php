@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\AdminUser;
 class AdminUsersTableSeeder extends Seeder
 {
     /**
@@ -11,6 +11,10 @@ class AdminUsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $user = new AdminUser();
+        $user -> name = "Kiran Jane";
+        $user -> email = "kk@gmail.com";
+        $user -> password = crypt("secret","");
+        $user -> save();
     }
 }
